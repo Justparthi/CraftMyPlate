@@ -1,0 +1,39 @@
+# Node.js dependencies
+/node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+/dist/
+/build/
+/coverage/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE & editor settings
+.vscode/
+.idea/
+
+# NPM package lock files (optional)
+package-lock.json
+yarn.lock
+
+# Docker files
+.docker/
+
+# TypeScript files (if using TypeScript)
+*.tsbuildinfo
+
+# Miscellaneous files
+*.bak
+*.swp
