@@ -1,37 +1,108 @@
-.sidebar{
-    width: 18%;
-    min-height: 100vh;
-    border: 1.5px solid #a9a9a9;
-    border-top: 0;
-    font-size: max(1vw, 10px);
-}
-
-.sidebar-options{
-    padding-top: 50px;
-    padding-left: 20%;
+.sidebar {
+    height: calc(100vh - 70px); /* Adjust based on your navbar height */
+    width: 250px;
+    background: #f8f7fd; /* Very light purple background */
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    border-right: 1px solid #e8e5f7;
+  }
+  
+  .sidebar-options {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.sidebar-option{
+    gap: 10px;
+  }
+  
+  .sidebar-option {
     display: flex;
     align-items: center;
     gap: 12px;
-    border: 1px solid #a9a9a9;
-    border-radius: 0;
-    padding: 8px 10px;
-    border-radius: 3px 0px 0px 3px;
-    cursor: pointer;
-}
-
-.sidebar-option.active{
-    background-color: #f4e7e5;
-    border-color: tomato;
-}
-
-@media (max-width:900px) {
-    .sidebar-option p{
-        display: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-option img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+  }
+  
+  .sidebar-option p {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  /* Active state using NavLink's .active class */
+  .sidebar-option.active {
+    background: #6b46c1; /* Main purple */
+    color: white;
+  }
+  
+  .sidebar-option.active img {
+    opacity: 1;
+    filter: brightness(0) invert(1); /* Makes icon white */
+  }
+  
+  /* Hover state */
+  .sidebar-option:hover:not(.active) {
+    background: #ede9fe; /* Light purple on hover */
+    color: #6b46c1;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 70px;
+      padding: 20px 10px;
     }
-}
+    
+    .sidebar-option {
+      padding: 12px;
+      justify-content: center;
+    }
+    
+    .sidebar-option p {
+      display: none;
+    }
+    
+    .sidebar-option img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  /* For mobile devices */
+  @media screen and (max-width: 480px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      bottom: 0;
+      top: auto;
+      border-right: none;
+      border-top: 1px solid #e8e5f7;
+      padding: 10px;
+    }
+  
+    .sidebar-options {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .sidebar-option {
+      flex: 1;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px;
+    }
+  
+    .sidebar-option p {
+      display: block;
+      font-size: 12px;
+    }
+  }

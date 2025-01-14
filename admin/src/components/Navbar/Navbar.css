@@ -1,14 +1,41 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 4%;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar .logo{
-    width: max(10%, 80px);
+.logo {
+  height: 40px;
+  width: auto;
+  font-size: 30px;
 }
 
-.navbar .profile{
-    width: 40px;
+.profile {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .profile {
+    height: 30px;
+    width: 30px;
+  }
 }
